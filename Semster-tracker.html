@@ -246,43 +246,90 @@
      
       <h2>Technical proficiency</h2>
       <div class="col-md-12">
-        <h3>What is the overall quality of your code like?</h3>
-        <p>  TODO <br>
+        <h3>New Technology’s</h3>
+        <p>When we first started this project it was very tempting to make a normal HTML page with some JavaScript pretty standard and easy. Since we didn’t know PHP we didn’t want to take the risk in learning in. Before we got started we talked to Elise she suggested we use a web framework such as YII,
+          <img src="images/portfolio/Semester tracker/TA1.PNG" width="600" height="400" alt=""/> <br>
+          <img src="images/portfolio/Semester tracker/TA2.PNG" width="600" height="400" alt=""/>
           <br>
-        <h5>Rating: T/5</h5>
+           To me, this looked very daunting I had never used a framework before let alone a PHP one but was willing to give it a go. We got to work trying to learn what it was and how to get it to work, we decided it was better to hold of the project until we had an understanding so of how it worked. <br>
+          After the holiday Aidyn had started work on the project by creating the initial template files for Yii that come with it we quickly found out how powerful and cool the framework did not only do it give us a nice-looking template, but it also had a built-in page called Gii that Generated the View pages and Crud controllers directly from the database.
+          <img src="images/portfolio/Semester tracker/TA3.PNG" width="600" height="400" alt=""/> <br>
+          This is by far the quickest way to get the site running while maintaining a good look. It would have taken a lot more time if we had gone with the original idea of doing it all manually. Frameworks have changed my whole mindset on how to do things. I was also able to pick up some new skills for working with PHP along the way and can understand how layouts work within the directory. We did the start off with a slow start but quickly caught up with the rest of the teams once we knew what we were doing. 
+			<br>
+		We also had to learn map a web framework with all the necessary tools to run a local site this saved us time because we didn’t have to copy our files to something like the Kate server every time we wanted to test something I recognised a lot of the things already here such as PHP Myadmin and the Apache web server so I was used to it within a few hours. 
+        <img src="images/portfolio/Semester tracker/TA4.png" width="400" height="356" alt=""/>
         <br>
-        <h4>Improvement Advice</h4>
-       TODO
+        
+        
+        
+        <br>
+        
         </p>
       </div>
+      
       <div class="col-md-12">
-        <h3>How well did you follow best practices in development?</h3>
-        <p>TODO<br>
+        <h3>My Roles</h3>
+        <p>This year I chose to work more on the backend and management side of the project, the first task was making a draft of the database all I had to go on was the database found in Elise’s old files which didn’t really help too much I decided it would be better to start from scratch and design the database in SQL using the standard InnoDB engine the first version of the Database was a scrawed version of notes on some paper.
+          <img src="images/portfolio/Semester tracker/TB1.jpg" width="600" height="400" alt=""/><br>
+          The database then gradually changed form and soon enough its first version was ready Although as you can see it had a lot of redundant data here and there was some more planning work to go into it before it could be fixed 
+          <img src="images/portfolio/Semester tracker/TB2.PNG" width="627" height="909" alt=""/> <br></br>
+          I ended up removing three tables of the database because they were not required and could easily be made redundant if we were to keep them in it would have just been more work to have a separate step, so I decided to differentiate students from lectures by adding a permissions row into the Person table. From here we could easily just run a query on that to determine the account type we wanted. We later used this change to hide certain tabs from students so that students could not add course’s etc 
+          <img src="images/portfolio/Semester tracker/TB3.PNG" width="560" height="373" alt=""/><br>
+          This was the final form of the Person table as you can see we also had an auth key and access Token these are a backend security measure that allows the site to remember the user data so that it is easier to log in next time. The access token is generated automatically making it a safe way to keep the user information while keeping the site as easy to use as possible.
+          <img src="images/portfolio/Semester tracker/TB4.PNG" width="600" height="400" alt=""/> <br>
+          Near the end of the project, Adon asked for a CSV file to be imported but the Database was not set up for this and I didn’t want to just do a “quick fix” as suggested by a team member for me to keep the database normalized it had to not allow null data. As nulls are negatively viewed from the perspective of database normalization. The idea is that if a value can be nothing, then you really should split that out into another sparse table such that you don't require rows for items which have no value.
           <br>
-        <h5>Rating: T/5</h5>
+          For me to do this I was going to have to break some of the front end views Luckily they are for the most part generated automatically so we didn’t have to worry about it too much. I had to Ideas one was to just add the data to a person and generate random data if the data was null. This is not a good design idea but would have been faster to implement or option two, the one I went with was to create new tables and link the person to them this way we could have as many contacts per person as we want and also add important student information if they were a past student. While I was adding it I did some extra work around adding a days table this allowed the courses to be set to certain days and displayed in the semester views tab.
+		  In the end, the data bae ended up looking something like this.
+		  <img src="images/portfolio/Semester tracker/TB5.PNG" width="600" height="400" alt=""/>
+       <br>
+       At the end I was happy with the end result It was a fully normalized third form database. With the ability to be expanded easily I kept each version of the database so any future groups could pick up on it easily.
+       <img src="images/portfolio/Semester tracker/TB6.PNG" width="665" height="340" alt=""/>
+       <br>
+       I could have had better naming conventions here but all anyone really needs is the Complete one
+	The second half of my Job was server management and host management we had to a host a live version of our site somewhere I had a choice of either talking to the BIT OP team to open a space for the site or I could use my home network both were good options and had high-speed connections. 
         <br>
-        <h4>Improvement Advice</h4>
-        TODO
-        </p>
-      </div>
-      <div class="col-md-12">
-        <h3>How well did you use appropriate version control?</h3>
-        <p>TODO <br>
-          <br>
-        <h5>Rating: T/5</h5>
+        I decided to run everything off of my home servers since then I had full control over them and knew they were running the adequate servers to host reliably. First was to set up a virtual host on the network. The server is running Wamp a service similar to wamp but is built specifically for windows machines in order to host something I had to edit my httpd.conf file in apache this me to specify a file alias and activate virtual hosting
+        
+        <img src="images/portfolio/Semester tracker/TB7.PNG" width="700" height="410" alt=""/>
         <br>
-        <h4>Improvement Advice</h4>
-        TODO
-        </p>
-      </div>
-      <div class="col-md-12">
-        <h3>To what extent do you think you contributed an equal portion of the overall project?</h3>
-        <p>TODO<br>
-          <br>
-        <h5>Rating: T/5</h5>
+        The next file I had to edit was the hosts file the host's file is a windows file found usually in Windows\Systems32\drivers\etc it is a file that contains the mappings of IP addresses to hostnames for TCP/IP connections. Once I've copied the Semester trackers Root folder to the virtual host's folder I had to create the mapping
+        <img src="images/portfolio/Semester tracker/TB8.PNG" width="691" height="465" alt=""/>
         <br>
-        <h4>Improvement Advice</h4>
-        TODO
+        As you can see I run quite a few services including a mail server that was used for when someone forgot their password on Mantis BT. You can also see the new see track subdomain appended on to the main domain address. We are running both IPV4 and IPV6 addressing schemes. We now have a local connection for the computer but it still won't connect to the internet yet the next step was setting up port forwarding to forward incoming clients to the address 
+        <img src="images/portfolio/Semester tracker/TB10.PNG" width="475" height="153" alt=""/> <br>
+        As you can see in the image above we set up a static routing policy for DHCP so that the server will always be given the same IP address for good measure I set the IP address out of the normal addressing range 192.168.1.81 this prevents any other mac address being assigned it in case the static DHCP address fails.
+        <br>
+        The last part of work on this network is to set up the port forwarding, this will forward any clients requesting access to a certain port from outside the network to be forwarded to the IP address set in this case it will be forwarded to my Server that will then forward it to the correct web page.
+        <img src="images/portfolio/Semester tracker/TB9.PNG" width="606" height="497" alt=""/>
+        <br>
+        The last part is setting up a DNS server I don’t run my own DNS server so I had to use a host Namecheap provide free DNSing to their users and update the data almost instantly so it was an easy choice I logged into my account and added a new A record an A record maps a domain name to the IP address (IPv4) of the computer hosting the domain. Simply put, an A record is used to find the IP address of a computer connected to the internet from a name.
+        <img src="images/portfolio/Semester tracker/TB11.PNG" width="600" height="400" alt=""/>
+        <br>
+        Once this was set up I had to wait 20 or so minutes this so the DNS server can send the DNS updates to other DNS servers around the world. After that the server was Live I did have some issues defining the location of the root folder but this was due to me not specifying that the subfolder was named “web” 
+        <br>
+        Apart from the management work specified on the professional proficiency I also did a few tweaks on the Web app itself I needed to make sure that the database had the correct access passwords to the Web servers database I found an issue in where the site would throw an access denied error if it tried to use root as the user. This as because the SQL server used a much more complex password for the root user. So I set up a new user named semroot with the password of root and edited the db.conf file. This had to be done with each site version update.
+        <img src="images/portfolio/Semester tracker/TB12.PNG" width="858" height="294" alt=""/>
+        <br>
+        Another fix I had to make was the Go Button at first its leads back to the YII welcome page this wasn’t good since it gave all guests backend information on the network I made two changes to this one was a fix for the live version and one as for the local.
+        <img src="images/portfolio/Semester tracker/TB13.PNG" width="700" height="463" alt=""/>
+        <br>
+        At one point in the project the Entire Mantis site went down I was alerted right and checked the site to confirm sure enough the site was down. This was bad because if any team members wanted to post an update or ticket they could not. This could have been seen as a downside to running things at home but this error could have just as easily happened on any server, it was a 503 error which really doesn’t help as all it means is “service unavailable”. I had to remote directly into my server to check the logs and found the issue straight away.
+        <img src="images/portfolio/Semester tracker/TB14.PNG" width="609" height="372" alt=""/>
+        <br>
+        <img src="images/portfolio/Semester tracker/TB15.PNG" width="656" height="202" alt=""/>
+        <br>
+        It was a 6 in a configuration file I must have accidentally pressed it when I remoted in to update the site and clicked save when I closed all files I removed the ‘6’ and it started to work again emergency everted.
+        <br>
+        As a form of collaboration we worked on GitLab this allowed us to easily share work with each other and see who was committing work.
+        <img src="images/portfolio/Semester tracker/TB16.PNG" width="700" height="400" alt=""/>
+        <br>
+        We could have used branches but found that we hardly ever worked on pages that someone else was working on at the same time. We had one merge error this was due to someone not pulling before attempting to commit their work. But it was easily fixed by replacing the working code with the broken code while also removing the Git Syntax.
+        <img src="images/portfolio/Semester tracker/TB17.PNG" width="850" height="300" alt=""/>
+        <br>
+        <br>
+        
+        
         </p>
       </div>
     </div>
